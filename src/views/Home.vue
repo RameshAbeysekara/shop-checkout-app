@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <br/>
     <Item title="Vue.js Test App with routing and vuexy" imgUrl="tshirt.jpg" />
     <OrderDetailsForm @proceedCheckout="proceedCheckout" />
   </div>

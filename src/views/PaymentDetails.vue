@@ -1,6 +1,6 @@
 <template>
   <div class="payment-details">
-    <h1>This is an PaymentDetails page</h1>
+    <h1>Enter Your Payment Details</h1>
     <PaymentDetailsForm @proceedPayment="proceedPayment" />
   </div>
 </template>
@@ -15,7 +15,6 @@ export default {
   },
   methods: {
     proceedPayment(formValues) {
-      console.log("payment", formValues);
       this.$store.commit({
         type: "addPaymentDetails",
         value: {

@@ -1,6 +1,6 @@
 <template>
   <div class="summary">
-    <h1>This is an Summary page</h1>
+    <h1>Order Summary</h1>
     <h3>{{ currentOrder.item.id }}</h3>
     <h3>{{ currentOrder.item.color }}</h3>
     <h3>{{ currentOrder.shipping.phoneNumber }}</h3>
