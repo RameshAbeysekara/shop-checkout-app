@@ -10,7 +10,7 @@
 
     <h3>Shipping Details</h3>
     <p>First Name: {{ currentOrder.shipping.firstName }}</p>
-    <p>Last Name: {{ currentOrder.shipping.LastName }}</p>
+    <p>Last Name: {{ currentOrder.shipping.lastName }}</p>
     <p>Phone Number: {{ currentOrder.shipping.phoneNumber }}</p>
     <p>Address Line 1: {{ currentOrder.shipping.addressLine1 }}</p>
     <p>Address Line 2: {{ currentOrder.shipping.addressLine2 }}</p>
