@@ -5,7 +5,7 @@ const store = createStore({
     return {
       order: {
         item: {
-          id: "0T123",
+          id: "",
           color: "",
           size: "",
           quantity: "",
@@ -28,9 +28,10 @@ const store = createStore({
   },
   mutations: {
     addItemDetails(state, payload) {
+      state.order.item.id = payload.value.id;
       state.order.item.color = payload.value.color;
-      state.order.item.size = payload.value.color;
-      state.order.item.quantity = payload.value.color;
+      state.order.item.size = payload.value.size;
+      state.order.item.quantity = payload.value.quantity;
     },
     addShippingDetails(state, payload) {
       state.order.shipping.firstName = payload.value.firstName;

@@ -25,6 +25,7 @@ export default {
       this.$store.commit({
         type: "addItemDetails",
         value: {
+          id: "0T123",
           color: formValues.color,
           size: formValues.size,
           quantity: formValues.quantity,
