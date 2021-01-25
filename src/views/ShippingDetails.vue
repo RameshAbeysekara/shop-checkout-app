@@ -1,6 +1,6 @@
 <template>
   <div class="shipping-details">
-    <h1>Enter Your Shipping Details</h1>
+    <h1 class="title">Enter Your Shipping Details</h1>
     <ShippingDetailsForm @proceedShipping="proceedShipping" />
   </div>
 </template>
@@ -30,3 +30,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#title {
+  padding: 30px;
+  text-align: center;
+}
+</style>

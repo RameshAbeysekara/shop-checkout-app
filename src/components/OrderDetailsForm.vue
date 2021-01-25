@@ -24,7 +24,7 @@
       <label for="quantity">Quantity</label>
       <input id="quantity" name="quantity" type="number" v-model="quantity" />
     </div>
-    <div>
+    <div class="button-container">
       <button>
         Proceed Checkout
       </button>
@@ -66,6 +66,7 @@ form {
 
 .form-control {
   margin: 0.5rem 0;
+  text-align: left;
 }
 
 .form-control.invalid input {
@@ -97,22 +98,14 @@ select {
   width: auto;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline-block;
-  width: auto;
-  margin-right: 1rem;
-}
-
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  font-weight: normal;
+.button-container {
+  padding-top: 20px;
 }
 
 button {
   font: inherit;
-  border: 1px solid #0076bb;
-  background-color: #0076bb;
+  border: 1px solid #e93342;
+  background-color: #e93342;
   color: white;
   cursor: pointer;
   padding: 0.75rem 2rem;
@@ -121,7 +114,7 @@ button {
 
 button:hover,
 button:active {
-  border-color: #002350;
-  background-color: #002350;
+  border-color: #b42531;
+  background-color: #b42531;
 }
 </style>

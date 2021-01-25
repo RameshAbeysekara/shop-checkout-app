@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ title }}</h1>
     <img alt="Product Image" :src="require(`../assets/${imgUrl}`)" />
+    <p>{{ description }}</p>
+    <p>{{ price }}</p>
   </div>
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   name: "Item",
   props: {
-    title: String,
+    description: String,
+    price: String,
     imgUrl: String,
   },
 };
@@ -33,5 +35,8 @@ a {
 img {
   height: 250px;
   width: 250px;
+}
+p {
+  font-weight: bold;
 }
 </style>

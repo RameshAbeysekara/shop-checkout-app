@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <br/>
-    <Item title="Vue.js Test App with routing and vuexy" imgUrl="tshirt.jpg" />
+    <br />
+    <h1>Vue.js Test App with routing and vuexy</h1>
+    <Item
+      description="Men’s Crew Neck T Shirts"
+      price="$ 25.00"
+      imgUrl="tshirt.jpg"
+    />
     <OrderDetailsForm @proceedCheckout="proceedCheckout" />
   </div>
 </template>

@@ -1,10 +1,25 @@
 <template>
   <div class="summary">
     <h1>Order Summary</h1>
-    <h3>{{ currentOrder.item.id }}</h3>
-    <h3>{{ currentOrder.item.color }}</h3>
-    <h3>{{ currentOrder.shipping.phoneNumber }}</h3>
-    <h3>{{ currentOrder.payment.cardNumber }}</h3>
+
+    <h3>Item Details</h3>
+    <p>Item ID: {{ currentOrder.item.id }}</p>
+    <p>Color: {{ currentOrder.item.color }}</p>
+    <p>Size: {{ currentOrder.item.size }}</p>
+    <p>Quantity: {{ currentOrder.item.quantity }}</p>
+
+    <h3>Shipping Details</h3>
+    <p>First Name: {{ currentOrder.shipping.firstName }}</p>
+    <p>Last Name: {{ currentOrder.shipping.LastName }}</p>
+    <p>Phone Number: {{ currentOrder.shipping.phoneNumber }}</p>
+    <p>Address Line 1: {{ currentOrder.shipping.addressLine1 }}</p>
+    <p>Address Line 2: {{ currentOrder.shipping.addressLine2 }}</p>
+
+    <h3>Payment Details</h3>
+    <p>Card Number: {{ currentOrder.payment.cardNumber }}</p>
+    <p>Expire Date: {{ currentOrder.payment.expireDate }}</p>
+    <p>CV Code: {{ currentOrder.payment.cvCode }}</p>
+    <p>Card Name: {{ currentOrder.payment.cardName }}</p>
   </div>
 </template>
 
