@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <br />
     <h1>Vue.js Test App with routing and vuexy</h1>
     <Item
       description="Men’s Crew Neck T Shirts"
