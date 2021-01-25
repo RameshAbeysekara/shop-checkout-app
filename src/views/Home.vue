@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Item title="Vue.js Test App with routing and vuexy" imgUrl="tshirt.jpg" />
-    <OrderDetailsForm />
+    <OrderDetailsForm @proceedCheckout="proceedCheckout" />
   </div>
 </template>
 
@@ -14,6 +14,19 @@ export default {
   components: {
     Item,
     OrderDetailsForm,
+  },
+  methods: {
+    proceedCheckout(formValues) {
+      this.$store.commit({
+        type: "addItemDetails",
+        value: {
+          color: formValues.color,
+          size: formValues.size,
+          quantity: formValues.quantity,
+        },
+      });
+      this.$router.push("/shipping-details");
+    },
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submitForm">
+  <form @submit.prevent="proceedCheckout">
     <div class="form-control">
       <label for="color">Color</label>
       <select id="color" name="color" v-model="color">
@@ -25,7 +25,9 @@
       <input id="quantity" name="quantity" type="number" v-model="quantity" />
     </div>
     <div>
-      <button>Proceed Checkout</button>
+      <button>
+        Proceed Checkout
+      </button>
     </div>
   </form>
 </template>
@@ -41,14 +43,11 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      this.$store.commit({
-        type: "addItemDetails",
-        value: {
-          color: this.color,
-          size: this.size,
-          quantity: this.quantity,
-        },
+    proceedCheckout() {
+      this.$emit("proceedCheckout", {
+        color: this.color,
+        size: this.size,
+        quantity: this.quantity,
       });
     },
   },
