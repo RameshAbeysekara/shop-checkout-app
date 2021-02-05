@@ -8,21 +8,28 @@
       <router-link to="/payment-details">Payment Details</router-link> >
       <router-link to="/summary">Summary</router-link>
     </div>
-    <div class="button-container">
-      <div class="button-logout">
-        <button @click="logout">
-          Logout
+    <div v-if="!currentRouteName">
+      <div class="button-container">
+        <div class="button-logout">
+          <button @click="logout">
+            Logout
+          </button>
+        </div>
+        <button @click="clearStorage">
+          Clear Orders
         </button>
       </div>
-      <button @click="clearStorage">
-        Clear Orders
-      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  computed: {
+    currentRouteName() {
+      return this.$route.name == "Login";
+    },
+  },
   methods: {
     logout() {
       this.$router.push("/");
