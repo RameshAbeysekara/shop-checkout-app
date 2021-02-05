@@ -5,7 +5,7 @@
       <input
         id="cardNumber"
         name="cardNumber"
-        type="text"
+        type="number"
         v-model.trim="cardNumber"
       />
     </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="form-control">
       <label for="cvCode">CV Code</label>
-      <input id="cvCode" name="cvCode" type="text" v-model.trim="cvCode" />
+      <input id="cvCode" name="cvCode" type="number" v-model.trim="cvCode" />
     </div>
     <div class="form-control">
       <label for="cardName">Card Owner Name</label>
@@ -64,6 +64,14 @@ export default {
 </script>
 
 <style scoped>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 form {
   margin: 2rem auto;
   max-width: 40rem;

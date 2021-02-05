@@ -23,7 +23,7 @@
       <input
         id="phoneNumber"
         name="phoneNumber"
-        type="text"
+        type="number"
         v-model.trim="phoneNumber"
       />
     </div>
@@ -80,6 +80,14 @@ export default {
 </script>
 
 <style scoped>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 form {
   margin: 2rem auto;
   max-width: 40rem;
