@@ -1,6 +1,10 @@
 <template>
   <div class="dashboard">
-    <h1>Orders List ({{ this.logedInUser }} user)</h1>
+    <h1>User Type: ({{ this.logedInUser }} user)</h1>
+    <button @click="placeOrder">
+      Place Order
+    </button>
+    <h1>Orders List</h1>
     <div v-for="order in this.orders" :key="order.index">
       <base-card>
         <h3>Item Details</h3>
@@ -34,6 +38,11 @@ export default {
       logedInUser: "",
       orders: [],
     };
+  },
+  methods: {
+    placeOrder() {
+      this.$router.push("/home");
+    },
   },
   mounted() {
     if (localStorage.user) {

@@ -3,7 +3,7 @@
     <router-view />
     <div id="nav">
       <router-link to="/dashboard">Dashboard</router-link> >
-      <router-link to="/home">Home</router-link> >
+      <router-link to="/home">Order Item</router-link> >
       <router-link to="/shipping-details">Shipping Details</router-link> >
       <router-link to="/payment-details">Payment Details</router-link> >
       <router-link to="/summary">Summary</router-link>
