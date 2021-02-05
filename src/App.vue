@@ -2,13 +2,40 @@
   <div id="app">
     <router-view />
     <div id="nav">
-      <router-link to="/">Home</router-link> >
+      <router-link to="/dashboard">Dashboard</router-link> >
+      <router-link to="/home">Home</router-link> >
       <router-link to="/shipping-details">Shipping Details</router-link> >
       <router-link to="/payment-details">Payment Details</router-link> >
       <router-link to="/summary">Summary</router-link>
     </div>
+    <div class="button-container">
+      <div class="button-logout">
+        <button @click="logout">
+          Logout
+        </button>
+      </div>
+      <button @click="clearStorage">
+        Clear Orders
+      </button>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logout() {
+      this.$router.push("/");
+      this.$store.commit({
+        type: "logout",
+      });
+    },
+    clearStorage() {
+      localStorage.removeItem("orders");
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -31,5 +58,29 @@
 
 #nav a.router-link-exact-active {
   color: #dd2d3c;
+}
+
+.button-container {
+  padding-top: 20px;
+}
+
+.button-logout {
+  padding-bottom: 10px;
+}
+
+button {
+  font: inherit;
+  border: 1px solid #b42121;
+  background-color: #b42121;
+  color: white;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+}
+
+button:hover,
+button:active {
+  border-color: #b42531;
+  background-color: #b42531;
 }
 </style>

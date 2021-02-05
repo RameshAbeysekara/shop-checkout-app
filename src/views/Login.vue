@@ -1,0 +1,111 @@
+<template>
+  <div>
+    <base-card>
+      <form @submit.prevent="submitForm">
+        <div class="form-control">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" v-model.trim="email" />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" v-model.trim="password" />
+        </div>
+        <p v-if="!formIsValid">
+          Please enter a valid email and password (must be at least 6 characters
+          long).
+        </p>
+        <p v-if="noUserError">
+          Please enter a valid email and password. User not Available
+        </p>
+        <base-button>Login</base-button>
+      </form>
+    </base-card>
+  </div>
+</template>
+
+<script>
+import loginCredentials from "../store/loginConfigs.js";
+import _ from "lodash";
+
+export default {
+  name: "Login",
+  data() {
+    return {
+      email: "",
+      password: "",
+      formIsValid: true,
+      noUserError: false,
+      loginCredentials: loginCredentials,
+    };
+  },
+  methods: {
+    async submitForm() {
+      this.noUserError = false;
+      this.formIsValid = true;
+      if (
+        this.email === "" ||
+        !this.email.includes("@") ||
+        this.password.length < 6
+      ) {
+        this.formIsValid = false;
+        return;
+      }
+
+      const actionPayload = {
+        email: this.email,
+        password: this.password,
+      };
+
+      const indexOfUser = _.findIndex(this.loginCredentials, (user) => {
+        return (
+          user.email == actionPayload.email &&
+          user.password == actionPayload.password
+        );
+      });
+
+      if (indexOfUser >= 0) {
+        this.$store.commit({
+          type: "addLoginDetails",
+          value: this.loginCredentials[indexOfUser].key,
+        });
+        this.$router.push("/dashboard");
+      } else {
+        this.noUserError = true;
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+form {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.form-control {
+  margin: 0.5rem 0;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3d008d;
+  background-color: #faf6ff;
+  outline: none;
+}
+</style>

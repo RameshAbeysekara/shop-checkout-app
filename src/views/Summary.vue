@@ -26,10 +26,33 @@
 <script>
 export default {
   name: "Summary",
-  computed: {
-    currentOrder() {
-      return this.$store.getters.currentOrder;
-    },
+  data: function() {
+    return {
+      currentOrder: {
+        item: {
+          id: "",
+          color: "",
+          size: "",
+          quantity: "",
+        },
+        shipping: {
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          addressLine1: "",
+          addressLine2: "",
+        },
+        payment: {
+          cardNumber: "",
+          expireDate: "",
+          cvCode: "",
+          cardName: "",
+        },
+      },
+    };
+  },
+  mounted() {
+    this.currentOrder = this.$store.getters.currentOrder;
   },
 };
 </script>

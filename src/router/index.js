@@ -3,10 +3,22 @@ import Home from "../views/Home.vue";
 import ShippingDetails from "../views/ShippingDetails.vue";
 import PaymentDetails from "../views/PaymentDetails.vue";
 import Summary from "../views/Summary.vue";
+import Login from "../views/Login.vue";
+import Dashboard from "../views/Dashboard.vue";
 
 const routes = [
   {
     path: "/",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: Dashboard,
+  },
+  {
+    path: "/home",
     name: "Home",
     component: Home,
   },
@@ -29,7 +41,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 });
 
 export default router;
