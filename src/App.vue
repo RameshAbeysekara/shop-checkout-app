@@ -32,6 +32,11 @@ export default {
     },
     clearStorage() {
       localStorage.removeItem("orders");
+      if (this.$route.name == "Dashboard") {
+        window.location.reload();
+      } else {
+        this.$router.push("/dashboard");
+      }
     },
   },
 };
