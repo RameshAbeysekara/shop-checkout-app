@@ -11,12 +11,13 @@
     </div>
     <div class="form-control">
       <label for="expireDate">Expiration Date</label>
-      <input
+      <!-- <input
         id="expireDate"
         name="expireDate"
         type="text"
         v-model.trim="expireDate"
-      />
+      /> -->
+      <Calendar v-model="expireDate" />
     </div>
     <div class="form-control">
       <label for="cvCode">CV Code</label>
@@ -40,12 +41,17 @@
 </template>
 
 <script>
+import Calendar from "primevue/calendar";
+
 export default {
   name: "PaymentDetailsForm",
+  components: {
+    Calendar,
+  },
   data() {
     return {
       cardNumber: "",
-      expireDate: "",
+      expireDate: null,
       cvCode: "",
       cardName: "",
     };
